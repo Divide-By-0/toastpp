@@ -8,14 +8,15 @@ import numpy.distutils as npd
 
 
 toastdir = os.getenv('TOASTDIR')
-if toastdir == None:
-	if "nt" in os.name:
+if toastdir == None or toastdir == "":
+	if "nt" in os.name or "posix" in os.name: # If Windows
 		toastdir = os.getcwd() + '/../..'
 	else:
 		print('Expected environment variable TOASTDIR is not defined!')
 		print('Please enter the path to the TOAST root directory:')
 		toastdir = raw_input()
 		#sys.exit(1)
+print("Toast dir: ", toastdir, os.getcwd())
 
 major = "%d" % sys.version_info[0]
 minor = "%d" % sys.version_info[1]
