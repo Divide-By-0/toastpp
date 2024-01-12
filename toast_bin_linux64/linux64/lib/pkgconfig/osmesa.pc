@@ -1,0 +1,12 @@
+prefix=/media/storage/src/toast_git/toastpp
+exec_prefix=${prefix}
+libdir=/media/storage/src/toast_git/toastpp/lib
+includedir=/media/storage/src/toast_git/toastpp/include
+
+Name: osmesa
+Description: Mesa Off-screen Rendering library
+Requires: 
+Version: 7.5.1
+Libs: -L${libdir} -lOSMesa
+Libs.private: -lm -lpthread  -ldl
+Cflags: -I${includedir}
